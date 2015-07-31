@@ -1,7 +1,7 @@
-import java.util.Scanner;
+import java.util.Scanner; 
 import java.util.Random;
 
-public class Bunco {
+public class BuncoHW {
 
 	public static final int NumPlayersMax = 10;
 	public static int NumPlayers = 0;
@@ -41,7 +41,6 @@ public class Bunco {
 		double random = generator.nextDouble(); // 0.0 <= random < 1.0 
 		// note: random never == 1
 		// the answer should be a random integer between Min and Max
-		// *** missing code here
 		int answer = Min + (int) (random * ((Max - Min) + 1));
 		return answer;
 	}
@@ -50,7 +49,6 @@ public class Bunco {
 		// put 3 random numbers (1 - 6) into DiceRoll[0 - 2]
 		// and prints out the three numbers
 		// output should look like: Dice roll: 4 3 3
-		// *** missing code here
 		DiceRoll[0] = RandInt(1, 6);
 		DiceRoll[1] = RandInt(1, 6);
 		DiceRoll[2] = RandInt(1, 6);
@@ -64,7 +62,17 @@ public class Bunco {
 		// Must also update the array called Scores
 		// - Score for the specific roll and round
 		// - Also update the total score in round 0 for the specific player
+		
+		int rollscore = 0;
+		
 		// *** missing code here
+		// Pigeon Code from slides
+		//If all three die == round# then score = 21
+		//Else If all three die are equal then score = 5
+		//Else
+				//If die1 == round# then score = 1
+				//If die2 == round# then score +1
+				//If die3 == round# then score +1
 		
 		Scores[player][round] += rollscore;
 		System.out.println("Roll Score = " + rollscore + " Cum round score = "
@@ -77,8 +85,15 @@ public class Bunco {
 		// for the specified player and round:
 		//		- roll the dice, and get a score 
 		//		- until the turn is complete 
+		int rollscore = 0;
+
+		System.out.println("Round# " + round + " Player# " + player);
 		// *** missing code here
-		
+		//Pigeon Code
+		//- DiceRoll
+		//- Score the turn
+		//- Roll again if didn’t get a 0 score and total score < 21
+
 	}
 	
 	public static void ShowScores(){
@@ -106,7 +121,6 @@ public class Bunco {
 		int round;
 		int player = -1;  // one less than the starting point
 		ShowScores();
-		// go through all the rounds
 		for (round = 1; round < 7; round++) {
 			do {
 				player = (player + 1) % NumPlayers; // allow player alternation
