@@ -65,22 +65,7 @@ public class Bunco {
 		// - Score for the specific roll and round
 		// - Also update the total score in round 0 for the specific player
 		// *** missing code here
-		int rollscore = 0;
-		if (DiceRoll[0] == round && DiceRoll[1] == round
-				&& DiceRoll[2] == round) {
-			// Bunco roll
-			rollscore = 21;
-		} else if (DiceRoll[0] == DiceRoll[1] && DiceRoll[1] == DiceRoll[2]) {
-			// Dice are all equal but not a bunco
-			rollscore = 5;
-		} else {
-			if (DiceRoll[0] == round)
-				rollscore = 1;
-			if (DiceRoll[1] == round)
-				rollscore += 1;
-			if (DiceRoll[2] == round)
-				rollscore += 1;
-		}
+		
 		Scores[player][round] += rollscore;
 		System.out.println("Roll Score = " + rollscore + " Cum round score = "
 				+ Scores[player][round]);
@@ -93,14 +78,7 @@ public class Bunco {
 		//		- roll the dice, and get a score 
 		//		- until the turn is complete 
 		// *** missing code here
-		int rollscore = 0;
-
-		System.out.println("Round# " + round + " Player# " + player);
-		do {
-			DiceRoll();
-			rollscore = ScoreRoll(player, round);
-		} while (rollscore > 0 && Scores[player][round] < 21);
-
+		
 	}
 	
 	public static void ShowScores(){
@@ -128,6 +106,7 @@ public class Bunco {
 		int round;
 		int player = -1;  // one less than the starting point
 		ShowScores();
+		// go through all the rounds
 		for (round = 1; round < 7; round++) {
 			do {
 				player = (player + 1) % NumPlayers; // allow player alternation
