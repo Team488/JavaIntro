@@ -3,10 +3,12 @@ public class Game {
     private Player[] players;
     private int numPlayers;
     
-    public Game(int numPlayers) {
-       this.numPlayers = numPlayers;
-       
-       players = new Player[numPlayers];
+    public Game(int numGamePlayers) {
+        // TODO: Implement
+        /* Expected actions:
+         *   - Set class's `numPlayers` field to the passed parameter
+         *   - Initialize the `players` array with the number of players (as length)
+         */
     }
     
     public void loadPlayers() {
@@ -41,8 +43,8 @@ public class Game {
 	
 	public void runGame() {
 		printScoreTable(); // everything should be zero here
-		
-		// Should we start on the first player on every round?
+
+
 		int currentPlayer =  -1;
 		for (int round = 1; round < 7; round++) {
 			do {
