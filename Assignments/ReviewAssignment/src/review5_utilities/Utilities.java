@@ -28,7 +28,7 @@ public class Utilities
      * NOTE: You don't have to implement this method. It has already been filled
      * in for you.
      */
-    public double randDouble() {
+    public static double randDouble() {
         return random.nextDouble();
     }
 }
