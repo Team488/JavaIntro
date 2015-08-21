@@ -36,6 +36,9 @@ public class BooleanIfTests
         assertTrue("111 is a lucky number.", BooleanIf.isLucky(111));
         assertTrue("666 is a lucky number.", BooleanIf.isLucky(666));
         assertTrue("999 is a lucky number.", BooleanIf.isLucky(999));
+        assertFalse("123 is not a lucky number.", BooleanIf.isLucky(123));
+        assertFalse("989 is not a lucky number.", BooleanIf.isLucky(989));
+        assertFalse("998 is not a lucky number.", BooleanIf.isLucky(998));
     }
     
 }
